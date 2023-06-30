@@ -9,3 +9,4 @@ Matrix operations using C++. My first project in C++ is a matrix class which imp
   - .get_dimension_x() Returns x dimension
   - .get_dimension_y() Returns y dimension
   - .get_data() Returns a 2d array of `std::vector<double>` with the data stored in the matrix.
+  - Basic operations of add and subtract.
