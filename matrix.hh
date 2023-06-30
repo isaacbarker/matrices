@@ -20,5 +20,7 @@ public:
   // Operations
   void apply(Matrix matrix);
   void apply(double constant);
+  void add(Matrix matrix);
+  void subtract(Matrix matrix);
 
 };

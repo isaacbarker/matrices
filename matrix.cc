@@ -50,11 +50,11 @@ std::vector<std::vector<double> > Matrix::get_data() {
 
 // Operations
 
-void Matrix::apply(Matrix m) {
+void Matrix::apply(Matrix matrix) {
 
-  int m_dimension_x = m.get_dimension_x();
-  int m_dimension_y = m.get_dimension_y();
-  std::vector<std::vector<double> > m_data = m.get_data();
+  int m_dimension_x = matrix.get_dimension_x();
+  int m_dimension_y = matrix.get_dimension_y();
+  std::vector<std::vector<double> > m_data = matrix.get_data();
 
   // Check dimensions are correct
   assert(m_dimension_x == dimension_y);
@@ -89,8 +89,49 @@ void Matrix::apply(Matrix m) {
   // Update current matrix
   data = result_matrix_data;
   dimension_y = m_dimension_y;
+
 }
 
+void Matrix::apply(double constant) {
 
+  // Iterate over each value and multiply by constant
+  for (int i = 0; i < dimension_y; i++) {
+    for (int j = 0; j < dimension_x; j++) {
+      data[i][j] *= constant;
+    }
+  }
 
+}
+
+void Matrix::add(Matrix matrix) {
+
+  // Ensure dimensions are equal
+  assert(get_dimensions() == matrix.get_dimensions());
+
+  // Add corresponding values to this
+  std::vector<std::vector<double> > m_data = matrix.get_data();
+
+  for (int i = 0; i < dimension_y; i++) {
+    for (int j = 0; j < dimension_x; j++) {
+      data[i][j] += m_data[i][j];
+    }
+  }
+
+}
+
+void Matrix::subtract(Matrix matrix) {
+
+  // Ensure dimensions are equal
+  assert(get_dimensions() == matrix.get_dimensions());
+
+  // Add corresponding values to this
+  std::vector<std::vector<double> > m_data = matrix.get_data();
+
+  for (int i = 0; i < dimension_y; i++) {
+    for (int j = 0; j < dimension_x; j++) {
+      data[i][j] -= m_data[i][j];
+    }
+  }
+
+}
 
