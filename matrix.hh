@@ -23,4 +23,7 @@ public:
   void add(Matrix matrix);
   void subtract(Matrix matrix);
 
+  // Misc.
+  void print();
+
 };

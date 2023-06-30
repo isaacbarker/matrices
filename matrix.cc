@@ -135,3 +135,15 @@ void Matrix::subtract(Matrix matrix) {
 
 }
 
+// Misc.
+
+void Matrix::print() {
+
+  for (int i = 0; i < dimension_y; i++) {
+    for (int j = 0; j < dimension_x; j++) {
+      std::cout << data[i][j] << " ";
+    } 
+    std::cout << "\n";
+  }
+
+}
