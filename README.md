@@ -4,7 +4,7 @@ Matrix operations using C++. My first project in C++ is a matrix class which imp
 
 ## Currently implemented:
 
-  - .apply() Applies another matrix or integer to a Matrix object. 
+  - .apply() Applies another matrix or constant to a Matrix object. 
   - .get_dimensions() Returns a `std::vector` with [x, y] 
   - .get_dimension_x() Returns x dimension
   - .get_dimension_y() Returns y dimension
